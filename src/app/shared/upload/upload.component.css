@@ -4,28 +4,29 @@ height: 96;
 }
 
 .songUpload{
-  width: 30%;
-  margin-left:10px;
-  margin-right: 10px;
+  width: 300%;
+  margin-left:100px;
+  margin-right: 100px;
   margin-top: 20px;
-  background-color: black;
+  background-color:white;
+  height:500px
 }
 
-.beatUpload{
+/* .beatUpload{
   width: 30%;
   margin-left:10px;
   margin-right: 10px;
   margin-top: 20px;
   background-color: black;
-}
+} */
 
-.coverUpload{
+/* .coverUpload{
   width: 30%;
   margin-left:10px;
   margin-right: 10px;
   margin-top: 20px;
   background-color: black;
-}
+} */
 
 .fileUploads{
 flex-direction: row;

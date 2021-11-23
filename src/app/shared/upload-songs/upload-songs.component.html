@@ -17,14 +17,14 @@
 
 
 
-<h3 style="text-align: center;font-family: 'Rubik', sans-serif;">Upload your music to Wapify!</h3>
+<h3 style="text-align: center;font-family: 'Rubik', sans-serif;">Upload your food menu to smartcafes</h3>
 <div fxLayout="column" fxLayoutAlign="space-around center" style="" >
 
-  <mat-card style=" " fxLayout="column" class="uploader">
+  <mat-card  fxLayout="column" class="uploader">
 
     <mat-horizontal-stepper [linear]="false" #stepper class="inuploader">
 
-      <mat-step label="Upload Your Song">
+      <mat-step label="food upload">
         <div fxLayout="column" fxLayoutAlign="space-between center">
 
           <div *ngIf="audioFileUrl !== null">
@@ -36,13 +36,13 @@
           </div>
 
           <div fxLayout="column" fxLayoutAlign="space-between center" style="margin-top: 90px;">
-            <div>
+            <!-- <div>
               <input style="display: none"
               type="file" (change)="uploadAudio($event)" #fileInput accept="audio/*" >
               <button color = "warn" mat-raised-button (click)="fileInput.click()" *ngIf="audioFileUrl === null">Select Audio File</button>
               <button color = "warn" mat-raised-button *ngIf="audioFileUrl !== null" matStepperNext>NEXT</button>
 
-            </div>
+            </div> -->
 
             <div style="font-size: x-small;text-align: center;">
               <!-- Provide FLAC, WAV, ALAC, or AIFF for highest audio quality. -->
@@ -59,17 +59,17 @@
 
           <div class="inputs">
             <mat-form-field class="example-full-width">
-              <mat-label>Artist Name</mat-label>
+              <mat-label>food name </mat-label>
               <input matInput name="artist" [(ngModel)]="artistName" required>
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
-              <mat-label>Title</mat-label>
+              <mat-label>food-category</mat-label>
               <input matInput [(ngModel)]="title" required>
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
-              <mat-label>Song Producers</mat-label>
+              <mat-label>price</mat-label>
               <input matInput [(ngModel)]="producer" required>
             </mat-form-field>
           </div>
@@ -82,7 +82,7 @@
                 <img src={{imageUrl}} (click)="fileInputImage.click()" style="cursor: pointer;" style="" class="cover"/>
               </div>
               <div>
-                <h6>Upload CoverPhoto.</h6>
+                <h6>Upload food image</h6>
               </div>
              </div>
              <input style="display: none" type="file" (change)="selectImage($event)" #fileInputImage accept=".png,.jpg">
@@ -93,30 +93,29 @@
 
         <div style="width: 100%;" class="genreandyear" >
           <mat-form-field>
-            <mat-label>Choose Genre</mat-label>
+            <mat-label>Choose food category</mat-label>
             <mat-select [(ngModel)]="genre" required>
-              <mat-option value="RAP">RAP</mat-option>
-              <mat-option value="R&B" >R&B</mat-option>
-              <mat-option value="TRAP" >TRAP</mat-option>
-
-              <mat-option value="POP" >POP</mat-option>
-              <mat-option value="GOSPEL" >GOSPEL</mat-option>
-              <mat-option value="ROCK" >ROCK</mat-option>
+              <mat-option value="RAP">BREAK FAST</mat-option>
+              <mat-option value="R&B" > LUNCH </mat-option>
+              <mat-option value="TRAP" > DINNER </mat-option>
+              <mat-option value="POP" >COFFEE</mat-option>
+              <!-- <mat-option value="GOSPEL" >GOSPEL</mat-option> -->
+              <!-- <mat-option value="ROCK" >ROCK</mat-option>
               <mat-option value="RUMBA" >RUMBA</mat-option>
 
               <mat-option value="BONGO FLEVA" >BONGO FLEVA</mat-option>
-              <mat-option value="HIP POP">HIP POP</mat-option>
+              <mat-option value="HIP POP">HIP POP</mat-option> -->
             </mat-select>
           </mat-form-field>
           <mat-form-field class="year_input" style="width: 100%;">
-            <mat-label style="width: 100%;">Year</mat-label>
+            <mat-label style="width: 100%;">price</mat-label>
             <input matInput [(ngModel)]="year" required>
           </mat-form-field>
         </div>
 
 
         <mat-form-field class="example-full-width">
-          <mat-label>Song Description</mat-label>
+          <mat-label>food description</mat-label>
           <textarea matInput [(ngModel)]="description" required></textarea>
         </mat-form-field>
 
@@ -131,8 +130,8 @@
             <button color = "warn" mat-raised-button (click)="uploadMusicData()">UPLOAD</button>
           </div>
 
-          <div style="font-size: x-small;text-align: center;">
-            By clicking Upload You agree terms and conditions
+          <div style="  font-size: large;     text-align: center;   margin-top: 40px;"   >
+            By clicking Upload You agree to upload your food menu to your restaurant
           </div>
         </div>
 
