@@ -1,0 +1,13 @@
+{
+  "appId": "com.wapify.web",
+  "appName": "Wapify",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "./dist/tanana",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

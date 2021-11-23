@@ -1,0 +1,90 @@
+<mat-progress-bar mode="indeterminate" *ngIf="progressStatus === true"></mat-progress-bar>
+
+<app-toolbar></app-toolbar>
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+  <mat-card style="margin-top: 50px;width: 400px;height: 500px;background-color: white;">
+
+    <h3 style="text-align: center;color: black;font-family: 'Rubik', sans-serif">Create your account</h3>
+    <h5 style="text-align: center;color: black;font-family: 'Rubik', sans-serif">Forever free. No credit card required.</h5>
+
+    <form [formGroup]="registerFormGroup"
+    class="example-form" fxLayout="column"
+    fxLayoutAlign="space-around center"
+    #form="ngForm" (ngSubmit)="registerUser()">
+
+      <input style="display: none"
+      type="file" (change)="imageSelector($event)" #fileInput>
+
+      <img src={{avatarFileUrl}} alt="Avatar" class="avatar" (click)="fileInput.click()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Your Profesion</mat-label>
+        <select formControlName="selectTypeControl"
+        matNativeControl
+        required style="color: black;"
+        [(ngModel)]="accountType"
+        name="accountType">
+          <option value="As Student">As Student / client</option>
+          <option value="As cafteria">As cafteria  owner </option>
+          <!-- <option value="As Musician">As Musician</option> -->
+        </select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+        formControlName="userNameControl"
+        matInput style="color: black;"
+        required [(ngModel)]="username"
+        name="username" >
+        <mat-error
+        *ngIf="registerFormGroup.get('userNameControl').invalid"
+        >{{"Username should not exceed 15 Character"}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+        formControlName="emailControl"
+        matInput
+        type="email"
+        style="color: black;"
+       [(ngModel)]="email"
+        name="email"
+       required>
+        <mat-error *ngIf="registerFormGroup.get('emailControl').invalid && registerFormGroup.get('emailControl').touched">{{"Invalid Email"}}</mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+        formControlName="passwordControl"
+         matInput
+         type="password"
+         style="color: black;"
+         required
+         [(ngModel)]="password"
+         name="password" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input
+        formControlName="confirmPassControl"
+         matInput
+         type="password"
+         style="color: black;"
+          required
+          [(ngModel)]="confirmPass"
+          name="confirmPass" >
+        <mat-error *ngIf="email !== confirmPass">{{"Password Doesn't match!"}}</mat-error>
+      </mat-form-field>
+
+    <button type="submit" mat-raised-button style="width: 100%;background-color:#448AFF;" [disabled]="form.invalid">Register</button>
+
+
+    </form>
+
+  </mat-card>
+</div>

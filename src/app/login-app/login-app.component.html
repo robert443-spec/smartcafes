@@ -1,0 +1,44 @@
+<mat-progress-bar mode="indeterminate" *ngIf="progressStatus === true"></mat-progress-bar>
+<app-toolbar></app-toolbar>
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+  <mat-card style="margin-top: 50px;width: 400px;height: 300px;background-color: white;">
+
+    <h3 style="text-align: center;color: black;font-family: 'Rubik', sans-serif">LOGIN IN </h3>
+    <!-- <h5 style="text-align: center;color: black;font-family: 'Rubik', sans-serif">I don't care much about music. What I like is sounds.</h5>
+    <h5 style="text-align: center;">🎶🎸🎻🎺🥁🎷🎼🎛️🎵</h5> -->
+    <form [formGroup]="loginFormGroup" class="example-form"  #form="ngForm" (ngSubmit)="login()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+        type="email"
+        matInput style="color: black;"
+        required
+         [(ngModel)]="email"
+         name="username"
+         formControlName="emailControl">
+         <mat-error
+         *ngIf="loginFormGroup.get('emailControl').invalid
+         &&
+          loginFormGroup.get('emailControl').touched"
+          >{{"Email is Invalid!"}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+        type="password"
+        matInput style="color: black;"
+         required
+         formControlName="passwordControl"
+        [(ngModel)]="password"
+        name="password" >
+        <mat-error *ngIf="loginFormGroup.get('passwordControl').invalid">{{"Password is short"}}</mat-error>
+      </mat-form-field>
+
+    <button [disabled]="form.invalid" type="submit" mat-raised-button style="width: 100%;background-color:#448AFF;">Login</button>
+
+    </form>
+
+  </mat-card>
+</div>
