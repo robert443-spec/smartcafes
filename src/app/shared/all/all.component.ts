@@ -73,7 +73,7 @@ export class AllComponent implements OnInit,DoCheck {
               artirst:result.payload.doc.data()["artirst"],
               title:result.payload.doc.data()["title"],
               description:result.payload.doc.data()["description"],
-              genre:result.payload.doc.data()["genre"],
+              genre:result.payload.doc.data()["foodCategory"],
               year:result.payload.doc.data()["year"],
               producer:result.payload.doc.data()["producer"],
               songUrl:result.payload.doc.data()["songUrl"],

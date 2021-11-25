@@ -28,7 +28,7 @@ export class UploadSongsComponent implements OnInit,DoCheck {
   artistName:string;
   title:string;
   producer:string;
-  genre:string;
+  foodCategory:string;
   year:string;
   description:string;
   progress:number;
@@ -104,7 +104,7 @@ export class UploadSongsComponent implements OnInit,DoCheck {
       artirst:this.artistName,
       title:this.title,
       description:this.description,
-      genre:this.genre,
+      foodCategory:this.foodCategory,
       year:this.year,
       producer:this.producer,
       songUrl:this.audioDownloadUrl,
@@ -116,7 +116,7 @@ export class UploadSongsComponent implements OnInit,DoCheck {
       this.snackBack.open("Successfull Uploaded!","",{duration:2000})
       this.title = "";
       this.description = "";
-      this.genre = "";
+      this.foodCategory = "";
       this.year = "";
       this.producer = "";
       this.audioFileUrl = null;
