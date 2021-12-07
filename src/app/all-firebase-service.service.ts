@@ -86,7 +86,7 @@ export class AllFirebaseServiceService {
 
   getSongDueToCategory(category:any){
 
-    return this.db.collection("Songs",ref=>ref.where("genre","==",category)).snapshotChanges()
+    return this.db.collection("Songs",ref=>ref.where("foodCategory","==",category)).snapshotChanges()
   }
 
   //Deleting

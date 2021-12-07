@@ -177,166 +177,7 @@
 
         <div *ngIf="status === 'homeStart'" style="height: fit-content;">
 
-          <div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 20px;">
-            <h4 style="font-family:'MuseoModerno';font-size:large">All Categories</h4>
-          </div>
-
-          <div>
-             <div><h3>Artists</h3></div>
-
-             <div>
-
-              <div fxLayout="row" fxLayoutAlign="start center" class="classArtists">
-
-                <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','RAP')" class="categoryClass11">
-
-                 
-                </div>
-
-
-
-                <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','BONGO FLEVA')" class="categoryClass11">
-
-                 
-                </div>
-
-                <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','TRAP')" class="categoryClass11">
-
-                 
-                </div>
-
-                <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-
-                  
-                </div>
-
-                <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-                 
-                </div>
-
-
-
-
-              <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','BONGO FLEVA')" class="categoryClass11">
-
-                
-              </div>
-
-              <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','TRAP')" class="categoryClass11">
-
-              </div>
-
-              <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-
-               
-
-              </div>
-
-              <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','HIP POP')" class="categoryClass11">
-
-
-
-            </div>
-
-              </div>
-
-
-            </div>
-
-
-
-          <div><h3>Genre</h3></div>
-          <div fxLayout="row" fxLayout.fxFlex.xs="column" fxLayoutAlign="space-around center" class="classContainer">
-
-          
-            </div>
-
-
-
-            <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','BONGO FLEVA')" class="categoryClass2">
-
-            </div>
-
-            <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','TRAP')" class="categoryClass3">
-
-           
-            </div>
-
-            <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass4">
-
-            
-            </div>
-
-
-
-            <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','HIP POP')" class="categoryClass5">
-
-             
-            </div>
-
-          </div>
-
-
-
-          <div>
-            <div><h3>Albums</h3></div>
-
-            <div>
-
-             <div fxLayout="row" fxLayoutAlign="start center" class="classArtists">
-
-               <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','RAP')" class="categor11">
-
-               </div>
-
-
-
-               <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','BONGO FLEVA')" class="categoryClass11">
-
-                
-               </div>
-
-               <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','TRAP')" class="categoryClass11">
-
-               </div>
-
-               <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-
-               </div>
-
-               <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-                
-               </div>
-
-
-
-
-             <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','BONGO FLEVA')" class="categoryClass11">
-
-               
-             </div>
-
-             <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','TRAP')" class="categoryClass11">
-
-             </div>
-
-             <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','R&B')" class="categoryClass11">
-
-              
-
-             </div>
-
-             <div fxLayout="column" fxLayoutAlign="space-around center" (click)="changeStatus('musicCategory','HIP POP')" class="categoryClass11">
-
-              
-             </div>
-
-           </div>
-
-             </div>
-
-
-           </div>
+         
 
 
 
@@ -394,16 +235,8 @@
                 <mat-list-item role="listitem" style="margin-bottom: 20px">
                   <mat-card style="width: 900px;background-color: #FAFAFA;" >
                     <div fxLayout="row" fxLayoutAlign="space-between center" >
-                      <div fxLayout="row" fxLayoutAlign="space-between center" >
-                        <mat-icon style="cursor: pointer;color:black;"
-                        (click)="playStream(audio.payload.doc.id,musicIndex,
-                        audio.payload.doc.data().artirst,
-                        audio.payload.doc.data().title,
-                        audio.payload.doc.data().imageCover,
-                        audio.payload.doc.data().songUrl,
-                        audio.payload.doc.data().count)">play_circle_filled</mat-icon>
-                      </div>
-
+                      
+                      <img class="musicCover" src={{songServ.songCoverImg}} style="width: 100px;height: 100px;margin-right: 10px;">
                       <div style="font-family: 'Rubik', sans-serif;font-size:medium;color:black;" class="songName" matTooltip={{audio.payload.doc.data().artirst}}>{{audio.payload.doc.data().artirst}}</div>
                       <div style="font-family: 'Rubik', sans-serif;font-size:medium;cursor: pointer;color:black;" class="songName" matTooltip={{audio.payload.doc.data().title}}>{{audio.payload.doc.data().title}}</div>
                       <div style="font-family: 'Rubik', sans-serif;font-size:medium;color:black;">3:03</div>
@@ -415,7 +248,7 @@
             </div>
           </div>
 
-          <div style="margin-left: 10px;" class="filterClass">
+          <!-- <div style="margin-left: 10px;" class="filterClass">
             <mat-card style="height: 150px;width: 220px;background-color: #448AFF;border-radius: 4px;">
               <p style="text-align: center;color: white;font-family: 'Rubik', sans-serif;font-size:medium;">Filter Results</p>
               <mat-radio-group class="example-radio-group">
@@ -434,7 +267,7 @@
                 </mat-radio-button>
               </mat-radio-group>
             </mat-card>
-          </div>
+          </div> -->
 
 
 
@@ -458,7 +291,7 @@
 
               </div>
 
-               <mat-card style="background-color:rgb(0, 0, 0);">
+               <!-- <mat-card style="background-color:rgb(0, 0, 0);">
                 <div fxLayout="row" fxLayoutAlign="space-around center">
 
                   <div>
@@ -495,7 +328,7 @@
 
 
                 </div>
-              </mat-card>
+              </mat-card> -->
 
             </div>
 
